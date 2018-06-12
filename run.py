@@ -57,7 +57,8 @@ def getAllSquare(screen_image,game_pos):
             all_square.append(square)
     # 因为有些图片的边缘不一致造成干扰（主要是空白区域的切图），所以把每张小方块向内缩小一部分再
     # 对所有的方块进行处理屏蔽掉外边缘 然后返回
-    return list(map(lambda square : square[SUB_LT_Y:SUB_RB_Y,SUB_LT_X:SUB_RB_X],all_square))
+    #return list(map(lambda square : square[SUB_LT_Y:SUB_RB_Y,SUB_LT_X:SUB_RB_X],all_square)) 原代码
+    return [square[SUB_LT_Y:SUB_RB_Y,SUB_LT_X:SUB_RB_X] for square in all_square]
     # 上面这行相当于下面这4行
     # new_all_square = []
     # for square in all_square:
